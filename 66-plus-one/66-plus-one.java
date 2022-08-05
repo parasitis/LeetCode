@@ -1,19 +1,22 @@
-class Solution {
-   public int[] plusOne(int[] digits) {
-        
-    int n = digits.length;
-    for(int i=n-1; i>=0; i--) {
-        if(digits[i] < 9) {
-            digits[i]++;
-            return digits;
+class Solution 
+{
+    public int[] plusOne(int[] digits) 
+    {
+        int index=digits.length-1;
+        while(index>=0)
+        {
+            if(digits[index]==9)
+            digits[index]=0;
+            
+            else
+            {
+                digits[index]+=1;
+                return digits;
+            }
+            index--;
         }
-        
-        digits[i] = 0;
+        int[] neww= new int[digits.length+1];
+        neww[0]=1;
+        return neww;
     }
-    
-    int[] newNo = new int [n+1];
-    newNo[0] = 1;
-    
-    return newNo;
-   }
 }
