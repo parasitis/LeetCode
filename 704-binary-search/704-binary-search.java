@@ -5,8 +5,8 @@ class Solution {
         int h=n;
       //  int mid;
         
-      // for(int i=0;i<nums.length-1;i++)
-       while(l<=h)
+       for(int i=0;i<=nums.length-1;i++)
+      // while(l<=h)
         {
             int mid=(l+h)/2;
           if(nums[mid]==target)
