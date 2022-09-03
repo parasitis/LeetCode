@@ -9,7 +9,7 @@ class Solution {
       // while(l<=h)
         {
             int mid=(l+h)/2;
-          if(nums[mid]==target)
+          if(target==nums[mid])
               return mid;
             if(target>nums[mid])
             {
