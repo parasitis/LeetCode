@@ -1,20 +1,18 @@
 class Solution {
     public int climbStairs(int n) {
-        if(n==1)
-            return 1;
-        if(n==2)
-            return 2;
-        int a=1;
-        int b=2;
-        int t,i=3;
-        while(i<=n)
+     if(n<3)
+         return n;
+        
+        int one=1;
+        int two=2;
+        int fib=0;
+        for(int i=3;i<=n;i++)
         {
-            t=b;
-            b=a+b;
-            a=t;
-            i++;
+            fib=one + two;
+            one=two;
+            two=fib;
         }
-        return b;
+        return fib;
         
     }
 }
