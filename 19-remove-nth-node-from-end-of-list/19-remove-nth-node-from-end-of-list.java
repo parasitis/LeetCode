@@ -10,25 +10,21 @@
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-       
-        ListNode dummy=new ListNode(0,head);        
-        ListNode leftPointer=dummy;
-        ListNode rightPointer=head;
+        ListNode start =new ListNode();
+        start.next=head;
+        ListNode fast = start;
+        ListNode slow= start;
         
-        //move the right pointer n times ahead from the head , so the offset between right and left pointer will be n.
-        
-        while(rightPointer!=null && n>0){
-            rightPointer=rightPointer.next;
-            n--;
+        for(int i=1;i<=n;++i)
+        {
+            fast=fast.next;
         }
-
-        // run a loop until right pointer becomes null so that left pointer will be at the nth position. 
-        
-        while(rightPointer!=null){
-            rightPointer=rightPointer.next;
-            leftPointer=leftPointer.next;
+        while(fast.next!=null)
+        {
+            fast=fast.next;
+            slow=slow.next;
         }
-        leftPointer.next=leftPointer.next.next;
-        return dummy.next;
+        slow.next=slow.next.next;
+        return start.next;
     }
 }
